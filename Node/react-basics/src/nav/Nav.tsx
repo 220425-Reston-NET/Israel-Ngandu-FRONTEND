@@ -1,7 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 function Nav() {
+
+    const counter = useSelector((state : any) => state.conter.value)
+
   return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
@@ -29,7 +33,9 @@ function Nav() {
                       </li>
                       <li className="nav-item">
                           <Link to="/list" className="nav-link">Lists</Link>
-
+                      </li>
+                      <li className="nav-item">
+                          <Link to="/hooks" className='nav-link'>{counter}</Link>
                       </li>
                   </ul>
               </div>

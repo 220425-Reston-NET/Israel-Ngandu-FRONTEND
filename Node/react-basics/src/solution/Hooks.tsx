@@ -1,5 +1,7 @@
 import { isVisible } from '@testing-library/user-event/dist/utils'
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { counterActions } from '../redux/slices/counterSlice';
 
 function Hooks() {
 
@@ -15,9 +17,13 @@ function Hooks() {
     // const [isVisible, setVisibility] = useState(true);
 
     // const [counter, setCounter] = useState(0);
+    const counter = useSelector((state: any) => state.conter.value)
+
+    const dispatch = useDispatch();
+
+
     const [state, setState] = useState ({
         isVisible : true,
-        counter : 0,
         text : ""
     })
 
@@ -37,7 +43,8 @@ function Hooks() {
 
     function incrementCounter(){
         // setCounter(counter + 1)
-        setState({...state, counter: state.counter})
+        // setState({...state, counter: state.counter})
+        dispatch(counterActions.increment());
     }
 
     function updateText(event : any){
@@ -51,7 +58,7 @@ function Hooks() {
                 state.isVisible ? <h2>Hello World</h2> : <></>
             }
             <button onClick={toggleDiv}>Toggle!</button>
-            <div>{state.counter}</div>
+            <div>{counter}</div>
             <button onClick={incrementCounter}>Increment</button>
             <input type="text" onChange={updateText}/>
             <h2>{state.text}</h2>
