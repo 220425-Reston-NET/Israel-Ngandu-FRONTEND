@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Nav() {
 
-    const counter = useSelector((state : any) => state.conter.value)
+    const counter = useSelector((state : any) => state.counter.value)
 
   return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

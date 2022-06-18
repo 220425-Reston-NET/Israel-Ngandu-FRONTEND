@@ -4,13 +4,27 @@
 
 */
 
+// import { createSlice } from "@reduxjs/toolkit";
+
+// export const counterSlice = createSlice({
+//     name: "counter",
+//     initialState: {value: 0},
+//     reducers: {
+//         increment(state){
+//             state.value++;
+//         }
+//     }
+// });
+
+// export const counterActions = counterSlice.actions;
 import { createSlice } from "@reduxjs/toolkit";
 
 export const counterSlice = createSlice({
     name: "counter",
-    initialState: {value: 0},
+    initialState: { value: 0 },
+    /* reducers define all of the actions for this slice */
     reducers: {
-        increment(state){
+        increment(state) {
             state.value++;
         }
     }

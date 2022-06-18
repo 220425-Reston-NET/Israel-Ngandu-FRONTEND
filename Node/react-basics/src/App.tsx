@@ -9,7 +9,7 @@ import Nav from './nav/Nav';
 import Problem from './problem/Problem';
 import Button from './props/ChildComponent/Button';
 import ParentComponent from './props/ParentComponent/ParentComponent';
-import Hooks from './solution/Hooks';
+import Hooks from './hooks/Hooks';
 
 
 function App() : JSX.Element{
